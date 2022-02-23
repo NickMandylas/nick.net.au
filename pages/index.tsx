@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     >
       <Head>
         <title>Nick Mandylas</title>
-        <meta name="description" content="My personal space on the web." />
+        <meta name="description" content="Personal space on the web." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <VStack>
@@ -28,13 +28,14 @@ const Home: NextPage = () => {
         />
         <Box textAlign="center">
           <p>
-            I'm <b>Nick</b> (/nɪk/).
+            I&apos;m <b>Nick</b> (/nɪk/).
           </p>
           <HStack justifyContent="center">
             <p>Associate Cloud Architect @ AWS</p>
             <img
               src="/amazon-vector.svg"
               style={{ height: 16, marginTop: 2 }}
+              alt="Amazon logo"
             />
           </HStack>
           <Link color="teal.500" href="mailto:me@nick.net.au">
