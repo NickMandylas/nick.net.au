@@ -1,9 +1,15 @@
-import { Box, Container, HStack, Link, VStack } from "@chakra-ui/react";
+import { Box, Container, HStack, Link, VStack, chakra } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { default as NextImage } from "next/image";
 
-import ProfilePic from "../public/nick_pic.jpg";
+import ProfileImage from "../public/images/nick-profile-pic.jpg";
+import AmazonIcon from "../public/icons/amazon-logo.svg";
+
+const Image = chakra(NextImage, {
+  shouldForwardProp: (prop) =>
+    ["width", "height", "layout", "src", "alt"].includes(prop),
+});
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +26,7 @@ const Home: NextPage = () => {
       </Head>
       <VStack>
         <Image
-          src={ProfilePic}
+          src={ProfileImage}
           alt="Picture of Nick Mandylas"
           width={195}
           height={213}
@@ -32,11 +38,14 @@ const Home: NextPage = () => {
           </p>
           <HStack justifyContent="center">
             <p>Associate Cloud Architect @ AWS</p>
-            <img
-              src="/amazon-vector.svg"
-              style={{ height: 16, marginTop: 2 }}
-              alt="Amazon logo"
-            />
+            <Box paddingTop={1.5}>
+              <Image
+                src={AmazonIcon}
+                height={16}
+                width={16}
+                alt="Amazon logo"
+              />
+            </Box>
           </HStack>
           <Link color="teal.500" href="mailto:me@nick.net.au">
             me@nick.net.au
