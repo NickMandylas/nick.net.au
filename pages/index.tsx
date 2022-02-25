@@ -1,13 +1,4 @@
-import {
-  Box,
-  Container,
-  HStack,
-  Link,
-  VStack,
-  chakra,
-  IconButton,
-  Divider,
-} from "@chakra-ui/react";
+import { Box, HStack, VStack, chakra, Divider, Center } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { default as NextImage } from "next/image";
@@ -18,6 +9,7 @@ import {
   ImYoutube,
   ImGithub,
 } from "react-icons/im";
+import SocialButton from "../components/SocialButton";
 
 import ProfileImage from "../public/images/nick-profile-pic.jpg";
 import AmazonIcon from "../public/icons/amazon-logo.svg";
@@ -29,12 +21,7 @@ const Image = chakra(NextImage, {
 
 const Home: NextPage = () => {
   return (
-    <Container
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height="100vh"
-    >
+    <Center height="100vh">
       <Head>
         <title>Nick Mandylas</title>
         <meta name="description" content="Personal space on the web." />
@@ -66,58 +53,34 @@ const Home: NextPage = () => {
         </Box>
         <Divider paddingTop={3} />
         <HStack paddingTop={4}>
-          <IconButton
-            colorScheme="teal"
-            variant="outline"
-            aria-label="Email"
+          <SocialButton
+            url="mailto:me@nick.net.au"
+            ariaLabel="Email"
             icon={<ImMail4 />}
-            onClick={() => window.open("mailto:me@nick.net.au", "_blank")}
           />
-          <IconButton
-            colorScheme="teal"
-            variant="outline"
-            aria-label="LinkedIn"
+          <SocialButton
+            url="https://www.linkedin.com/in/nicholas-mandylas/"
+            ariaLabel="LinkedIn"
             icon={<ImLinkedin2 />}
-            onClick={() =>
-              window.open(
-                "https://www.linkedin.com/in/nicholas-mandylas/",
-                "_blank"
-              )
-            }
           />
-          <IconButton
-            colorScheme="teal"
-            variant="outline"
-            aria-label="Spotify"
+          <SocialButton
+            url="https://open.spotify.com/user/1277355889"
+            ariaLabel="Spotify"
             icon={<ImSpotify />}
-            onClick={() =>
-              window.open("https://open.spotify.com/user/1277355889", "_blank")
-            }
           />
-          <IconButton
-            colorScheme="teal"
-            variant="outline"
-            aria-label="Youtube"
+          <SocialButton
+            url="https://www.youtube.com/channel/UClEOUz2V0wx-YDB3nfokImA"
+            ariaLabel="Youtube"
             icon={<ImYoutube />}
-            onClick={() =>
-              window.open(
-                "https://www.youtube.com/channel/UClEOUz2V0wx-YDB3nfokImA",
-                "_blank"
-              )
-            }
           />
-          <IconButton
-            colorScheme="teal"
-            variant="outline"
-            aria-label="Github"
+          <SocialButton
+            url="https://github.com/NickMandylas/"
+            ariaLabel="Github"
             icon={<ImGithub />}
-            onClick={() =>
-              window.open("https://github.com/NickMandylas/", "_blank")
-            }
           />
         </HStack>
       </VStack>
-    </Container>
+    </Center>
   );
 };
 
