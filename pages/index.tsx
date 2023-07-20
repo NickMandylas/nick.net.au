@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             I&apos;m <b>Nick</b> (/nɪk/).
           </p>
           <HStack justifyContent="center">
-            <p>Associate Cloud Architect @ AWS</p>
+            <p>ML Application Engineer @ AWS</p>
             <Box paddingTop={1.5}>
               <Image
                 src={AmazonIcon}
